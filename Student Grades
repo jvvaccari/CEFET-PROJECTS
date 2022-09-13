@@ -1,0 +1,26 @@
+#include<stdio.h>
+#define ALU 5 // student counter
+#define TOT 11
+void initializes(int v[])
+{
+    for(int i=0;i<TOT;i++)
+        v[i]=0;
+}
+void exhibit(int v[])
+{
+    for(int i=0;i<TOT;i++)
+        printf("Evaluation grade: %d:%d\n",i,v[i]);
+}
+int main()
+{
+    int vqtd[TOT],grade;
+    initializes(vqtd);
+    for(int i=0;i<ALU;i++)
+    {
+        printf("Inform evaluation grade: (0 to 10):\n");
+        scanf("%d",&grade);
+        vqtd[grade]++;
+    }
+    exhibit(vqtd);
+    return 0;
+}
