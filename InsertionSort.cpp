@@ -11,14 +11,15 @@ void insertion(int A[]){
                 aux=A[i];
                 A[i]=A[j];
                 A[j]=aux;
-            
-            }
-            for(comp=j-1;comp>0;comp--){
+
+                for(comp=j-1;comp>0;comp--){
                 if(A[comp]>A[j]){
                     aux=A[comp];
                     A[comp]=A[j];
                     A[j]=aux;
                 }
+            }
+            
             }
         }
     }
