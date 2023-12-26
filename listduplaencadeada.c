@@ -1,18 +1,11 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-/*
-    Lista Simplismente Encadeada 
-    Como inserir no início da lista?
-*/
-
 typedef struct no{
     int valor;
     struct no *proximo;
     struct no *anterior;
 }No;
-
-// procedimento para inserir no início
 
 void inserir_no_inicio(No **lista,int num){
     No *novo = malloc(sizeof(No));
@@ -29,8 +22,6 @@ void inserir_no_inicio(No **lista,int num){
     else
         printf("Erro ao alocar memoria!\n");
 }
-
-// procedimento para inserir no fim
 
 void inserir_no_fim(No **lista,int num){
     No *aux,*novo = malloc(sizeof(No));
@@ -55,13 +46,11 @@ void inserir_no_fim(No **lista,int num){
         printf("Erro ao alocar memoria!\n");
 }
 
-//procedimento para inserir no meio
-
 void inserir_no_meio(No **lista,int num,int ref){
     No *aux,*novo=malloc(sizeof(No));
     if(novo){
         novo->valor= num;
-        // é o primeiro nó? A lista está vazia?
+        //A lista está vazia?
         if(*lista == NULL){
             novo->proximo=NULL;
             novo->anterior = NULL;
@@ -125,8 +114,6 @@ void inserir_ordenado(No **lista,int num){
     else{ printf("Erro ao alocar memoria!\n");}
 }
 
-//remover um nó de uma lista
-
 No* remover(No **lista,int num){
     No *aux,*remover=NULL;//sem alocar,pois queremos encontrar o elemento
 
@@ -159,7 +146,6 @@ No* remover(No **lista,int num){
     return remover;
 }
 
-//buscar um elemento
 No* busca(No **lista,int num){
     No *aux,*no = NULL;
     aux=*lista;
@@ -172,8 +158,6 @@ No* busca(No **lista,int num){
     
     return no;
 }
-
-//imprimir
 
 void imprimir(No *no){
     printf("\n\tLista:");
